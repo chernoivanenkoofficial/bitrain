@@ -1,0 +1,23 @@
+[package]
+name = "build_torernt_core"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+byteorder = "1.4.3"
+bufstream = "0.1.4"
+serde_bencoded = {version = "^0.3.1", optional = true}
+serde = {version = "^1.0.0", optional = true}
+serde_derive = {version = "^1.0.0", optional = true}
+serde_bytes = {version = "0.11.7", optional = true}
+
+[dev-dependencies]
+rstest = "0.15.0"
+hex-literal = "0.3.4"
+
+[features]
+default = ["use-serde"]
+# Extract into feature in case more parsing methods would be available in the future
+use-serde = ["serde_bencoded", "serde", "serde_derive", "serde_bytes"]

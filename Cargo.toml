@@ -1,0 +1,6 @@
+[workspace]
+
+members = [
+    "build_torrent_core",
+    "build_torrent_derive"
+]
